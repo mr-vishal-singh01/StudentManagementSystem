@@ -1,4 +1,3 @@
-# StudentManagementSystem
 # Student Management System - Vishal Chauchan
 
 This is a complete, menu-driven Student Management System developed in C.
