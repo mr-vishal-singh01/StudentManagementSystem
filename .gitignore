@@ -3,6 +3,8 @@ student_mgmt
 student_mgmt.exe
 *.o
 *.obj
+*.out
+*.app
 
 # Build directories
 build/
@@ -10,11 +12,29 @@ CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+*.cmake
 
 # Data files
 *.dat
+*.db
+*.sqlite
+*.csv
+*.log
 
-# IDEs
+# Secrets and Environment
+.env
+.env.*
+*.pem
+*.key
+*.pub
+token.txt
+secrets/
+credentials/
+
+# IDEs and OS
 .vscode/
 .idea/
+.DS_Store
 *.swp
+*.swo
+.history/
