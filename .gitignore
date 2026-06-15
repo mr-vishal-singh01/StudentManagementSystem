@@ -1,0 +1,14 @@
+# Build directories
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Compiled binaries
+student_mgmt
+*.exe
+student_mgmt_test*
+
+# Data files
+*.dat
