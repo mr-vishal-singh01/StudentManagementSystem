@@ -54,7 +54,11 @@ int main() {
         printf("\n=========================================");
         printf("\nEnter your choice: ");
         
-        if (scanf("%d", &choice) != 1) {
+        int res = scanf("%d", &choice);
+        if (res == EOF) {
+            printf("\nExiting system due to EOF.\n");
+            exit(0);
+        } else if (res != 1) {
             printf("\n[Error] Invalid input. Please enter a number (1-6).\n");
             clearInputBuffer();
             continue;
