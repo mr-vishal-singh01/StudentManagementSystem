@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.10)
-project(StudentManagement SYSTEM C)
+project(StudentManagementSystem C)
 
-# Set the C standard to C99
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
-# Define the executable
-add_executable(student_mgmt main.c)
+# Source files
+set(SOURCES main.c)
 
-# Enable testing support for CTest (so `ctest` command in CI doesn't error out)
+# Executable
+add_executable(student_mgmt ${SOURCES})
+
+# Enable testing support for GitHub Actions
 enable_testing()
+add_test(NAME basic_run COMMAND student_mgmt)
