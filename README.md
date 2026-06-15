@@ -37,6 +37,20 @@ cmake --build .
 
 ---
 
+## 🧪 How to Test New Features
+
+### 1. Data Integrity (Name Validation)
+- Choose **Option 1** (Add Student).
+- Try to enter a name with numbers (e.g., `Vishal123`).
+- **Result:** The system will block the entry and ask for a valid name.
+
+### 2. Smart Search (Search by Name)
+- Choose **Option 4** (Search Student by Name).
+- Enter part of a name (e.g., `Vishal`).
+- **Result:** The system will find all matching student profiles.
+
+---
+
 ## ✨ Features
 - **Full CRUD:** Add, Display, Search, Modify, and Delete student records.
 - **Data Persistence:** Records are saved in `students.dat` (binary format).
