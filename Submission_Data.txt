@@ -1,0 +1,28 @@
+# SUBMISSION DETAILS FOR FORM
+
+## Project Title
+Student Management System
+
+## Student Name
+Vishal Chauchan
+
+## Project Description
+A comprehensive, menu-driven application developed in C for managing student records. The system utilizes binary file handling for persistent data storage and supports full CRUD operations (Add, Display, Search, Modify, Delete). It tracks 14 essential student fields including Academic Performance (CGPA, Attendance), Financial Records (Fees, Fines), and Personal Details.
+
+## Major Functionalities
+- **Binary File Persistence**: Ensures data is saved across sessions in `students.dat`.
+- **Advanced CRUD**: Complete lifecycle management of student records.
+- **Search Engine**: Rapid lookup of student profiles by unique ID.
+- **Academic Tracking**: Integrated tracking of CGPA and Attendance percentages.
+- **Financial Management**: Built-in monitoring of tuition fees and pending fines.
+
+## Technical Stack
+- **Language**: C Programming
+- **Storage**: Binary File Handling
+- **Paradigm**: Procedural / Functional
+- **Interface**: Console-based Menu-Driven Interface
+
+## GitHub Repository (Local)
+The project folder includes a local Git repository with version history.
+Initial Commit: Initialized structure and core logic.
+Tag: v1.0 (Final Version)
