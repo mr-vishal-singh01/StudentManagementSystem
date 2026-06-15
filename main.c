@@ -34,7 +34,9 @@ void displayAll();
 void searchStudent();
 void modifyStudent();
 void deleteStudent();
+void searchByName();
 void clearInputBuffer();
+int isValidName(const char *name);
 
 const char *FILENAME = "students.dat";
 
@@ -48,9 +50,10 @@ int main() {
         printf("\n1. Add Student");
         printf("\n2. Display All Students");
         printf("\n3. Search Student by ID");
-        printf("\n4. Modify Student Record");
-        printf("\n5. Delete Student Record");
-        printf("\n6. Exit");
+        printf("\n4. Search Student by Name");
+        printf("\n5. Modify Student Record");
+        printf("\n6. Delete Student Record");
+        printf("\n7. Exit");
         printf("\n=========================================");
         printf("\nEnter your choice: ");
         
@@ -59,7 +62,7 @@ int main() {
             printf("\nExiting system due to EOF.\n");
             exit(0);
         } else if (res != 1) {
-            printf("\n[Error] Invalid input. Please enter a number (1-6).\n");
+            printf("\n[Error] Invalid input. Please enter a number (1-7).\n");
             clearInputBuffer();
             continue;
         }
@@ -68,13 +71,14 @@ int main() {
             case 1: addStudent(); break;
             case 2: displayAll(); break;
             case 3: searchStudent(); break;
-            case 4: modifyStudent(); break;
-            case 5: deleteStudent(); break;
-            case 6: 
+            case 4: searchByName(); break;
+            case 5: modifyStudent(); break;
+            case 6: deleteStudent(); break;
+            case 7: 
                 printf("\nExiting system. Thank you for using Student Management System!\n");
                 exit(0);
             default:
-                printf("\n[Error] Invalid choice. Please select between 1 and 6.\n");
+                printf("\n[Error] Invalid choice. Please select between 1 and 7.\n");
         }
     }
     return 0;
@@ -83,6 +87,18 @@ int main() {
 void clearInputBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
+}
+
+int isValidName(const char *name) {
+    if (strlen(name) == 0) return 0;
+    for (int i = 0; name[i] != '\0'; i++) {
+        if (!((name[i] >= 'a' && name[i] <= 'z') || 
+              (name[i] >= 'A' && name[i] <= 'Z') || 
+               name[i] == ' ')) {
+            return 0;
+        }
+    }
+    return 1;
 }
 
 void addStudent() {
@@ -103,8 +119,12 @@ void addStudent() {
     }
     clearInputBuffer();
 
-    printf("Enter Full Name: ");
-    if (fgets(s.name, 50, stdin)) s.name[strcspn(s.name, "\n")] = 0;
+    while(1) {
+        printf("Enter Full Name: ");
+        if (fgets(s.name, 50, stdin)) s.name[strcspn(s.name, "\n")] = 0;
+        if (isValidName(s.name)) break;
+        printf("[Error] Name should only contain letters and spaces. Try again.\n");
+    }
     
     printf("Enter Father's Name: ");
     if (fgets(s.father_name, 50, stdin)) s.father_name[strcspn(s.father_name, "\n")] = 0;
@@ -322,4 +342,35 @@ void deleteStudent() {
         remove("temp.dat");
         printf("\n[Error] Record with ID %d not found.\n", id);
     }
+}
+
+void searchByName() {
+    FILE *fp = fopen(FILENAME, "rb");
+    if (fp == NULL) {
+        printf("\n[Error] No records available to search.\n");
+        return;
+    }
+
+    char searchName[50];
+    int found = 0;
+    printf("\nEnter Student Name (or part of name) to search: ");
+    if (fgets(searchName, 50, stdin)) searchName[strcspn(searchName, "\n")] = 0;
+
+    struct Student s;
+    while (fread(&s, sizeof(struct Student), 1, fp)) {
+        // Using strcasestr if available or a simple case-insensitive check
+        // For standard C, we'll use strstr (case sensitive) for now
+        if (strstr(s.name, searchName) != NULL) {
+            found = 1;
+            printf("\n-----------------------------------------");
+            printf("\n         STUDENT PROFILE (ID: %d)       ", s.id);
+            printf("\n-----------------------------------------");
+            printf("\nName          : %s", s.name);
+            printf("\nSubject       : %s", s.subject);
+            printf("\nPerformance   : CGPA: %.2f, Attendance: %.2f%%", s.cgpa, s.attendance);
+            printf("\n-----------------------------------------");
+        }
+    }
+    if (!found) printf("\n[Error] No student matching '%s' was found.\n", searchName);
+    fclose(fp);
 }
