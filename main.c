@@ -1,3 +1,11 @@
+/*
+ * Project Title: Student Management System
+ * Student Name:  Vishal Chauchan
+ * Language:      C Programming
+ * Description:   A menu-driven system for managing student records using 
+ *                binary file handling for persistent data storage.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
