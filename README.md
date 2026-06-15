@@ -1,10 +1,12 @@
 # 🎓 Student Management System
 
-![Build Status](https://github.com/mr-vishal-singh01/StudentManagementSystem/actions/workflows/cmake-multi-platform.yml/badge.svg)
-![License](https://img.shields.io/github/license/mr-vishal-singh01/StudentManagementSystem)
-![Stars](https://img.shields.io/github/stars/mr-vishal-singh01/StudentManagementSystem)
+> **About:** Professional C-based Student Management System with persistent binary storage, multi-platform CMake builds, and automated CI/CD workflows.
+> 
+> **Builds:** ![Build Status](https://github.com/mr-vishal-singh01/StudentManagementSystem/actions/workflows/cmake-multi-platform.yml/badge.svg)
+> **License:** ![License](https://img.shields.io/github/license/mr-vishal-singh01/StudentManagementSystem)
+> **Topics:** `c-programming` | `management-system` | `cmake` | `github-actions` | `hackathon`
 
-A high-performance, menu-driven Student Management System developed in **C**. This project features persistent data storage using binary file handling and is fully optimized for cross-platform deployment.
+---
 
 ---
 
