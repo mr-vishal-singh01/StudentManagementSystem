@@ -1,10 +1,18 @@
 # 🎓 Student Management System
 
-> **About:** Professional C-based Student Management System with persistent binary storage, multi-platform CMake builds, and automated CI/CD workflows.
+> **About:** A foundational data-persistence engine built in C. This project serves as a low-level architecture study for high-performance data processing pipelines and efficient AI model memory management.
 > 
 > **Builds:** ![Build Status](https://github.com/mr-vishal-singh01/StudentManagementSystem/actions/workflows/cmake-multi-platform.yml/badge.svg)
 > **License:** ![License](https://img.shields.io/github/license/mr-vishal-singh01/StudentManagementSystem)
-> **Topics:** `c-programming` | `management-system` | `cmake` | `github-actions` | `hackathon`
+> **AI/ML Focus:** `data-engineering` | `low-level-systems` | `high-performance-computing` | `c-programming`
+
+---
+
+## 🧠 Why C for AI/ML?
+As an **AI/ML Student**, I built this system to master **Low-Level Data Persistence**. Understanding how data is stored in binary format (`.dat`) and managed in memory is critical for:
+- Building faster data loading pipelines for model training.
+- Optimizing memory usage in Large Language Models (LLMs).
+- Creating high-performance inference engines that require bare-metal execution.
 
 ---
 
