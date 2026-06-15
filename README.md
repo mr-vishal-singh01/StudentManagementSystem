@@ -1,31 +1,58 @@
-# Student Management System - Vishal Chauchan
+# 🎓 Student Management System
 
-This is a complete, menu-driven Student Management System developed in C.
+![Build Status](https://github.com/mr-vishal-singh01/StudentManagementSystem/actions/workflows/cmake-multi-platform.yml/badge.svg)
+![License](https://img.shields.io/github/license/mr-vishal-singh01/StudentManagementSystem)
+![Stars](https://img.shields.io/github/stars/mr-vishal-singh01/StudentManagementSystem)
 
-## Features
-- Add student records (ID, Name, Father Name, Mother Name, Phone, Address, Subject, Year, Semester, Fees, CGPA, Fine, Project, Attendance).
-- Display all student records in a tabular format.
-- Search for a student by their ID.
-- Modify existing student records.
-- Delete student records.
-- Persistent data storage using binary file handling (`students.dat`).
+A high-performance, menu-driven Student Management System developed in **C**. This project features persistent data storage using binary file handling and is fully optimized for cross-platform deployment.
 
-## How to Compile and Run
-1. Open your terminal or command prompt.
-2. Navigate to the project folder.
-3. Compile the code using a C compiler (like GCC):
-   ```bash
-   gcc main.c -o student_mgmt
-   ```
-4. Run the executable:
-   ```bash
-   ./student_mgmt
-   ```
+---
 
-## Files in this Project
-- `main.c`: The C source code containing the logic and functions.
-- `Presentation.md`: A document containing the content for your PPT presentation.
-- `students.dat`: (Created after running) The binary file where student data is stored.
+## 🚀 Quick Start
 
-## Presentation Content
-The `Presentation.md` file contains all the slides you need for your PPT. You can copy the content directly into PowerPoint slides.
+### 1. Prerequisites
+- **C Compiler:** GCC (Linux) or MSVC (Windows)
+- **Build Tool:** CMake 3.10+
+
+### 2. Build Instructions
+```bash
+# Clone the repository
+git clone https://github.com/mr-vishal-singh01/StudentManagementSystem.git
+cd StudentManagementSystem
+
+# Create build directory
+mkdir build && cd build
+
+# Configure and Build
+cmake ..
+cmake --build .
+```
+
+### 3. Run the Program
+```bash
+./student_mgmt
+```
+
+---
+
+## ✨ Features
+- **Full CRUD:** Add, Display, Search, Modify, and Delete student records.
+- **Data Persistence:** Records are saved in `students.dat` (binary format).
+- **Security:** Built-in input validation to prevent buffer overflows.
+- **CI/CD:** Automated builds for Windows and Linux via GitHub Actions.
+
+---
+
+## 📚 Documentation
+For detailed guides, please visit our **[Project Wiki](https://github.com/mr-vishal-singh01/StudentManagementSystem/wiki)**:
+- [User Guide](https://github.com/mr-vishal-singh01/StudentManagementSystem/wiki/User-Guide)
+- [Developer Guide](https://github.com/mr-vishal-singh01/StudentManagementSystem/wiki/Developer-Guide)
+
+---
+
+## 🛡️ Security & License
+- **Security:** Please refer to our [Security Policy](SECURITY.md) for reporting vulnerabilities.
+- **License:** This project is licensed under the [MIT License](LICENSE).
+
+---
+*Developed by **Vishal Chauchan***
