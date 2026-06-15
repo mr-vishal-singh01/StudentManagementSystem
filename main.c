@@ -143,6 +143,12 @@ void addStudent() {
     scanf("%f", &s.attendance);
     clearInputBuffer();
 
+    if (feof(stdin)) {
+        printf("\n[Error] Input stream ended unexpectedly. Record not saved.\n");
+        fclose(fp);
+        return;
+    }
+
     fwrite(&s, sizeof(struct Student), 1, fp);
     fclose(fp);
     printf("\n[Success] Student record for '%s' (ID: %d) added successfully!\n", s.name, s.id);
@@ -256,6 +262,11 @@ void modifyStudent() {
             printf("Update Attendance %%: ");
             scanf("%f", &s.attendance);
             clearInputBuffer();
+            
+            if (feof(stdin)) {
+                printf("\n[Error] Input stream ended unexpectedly. Changes not saved.\n");
+                break;
+            }
             
             fseek(fp, -size, SEEK_CUR);
             fwrite(&s, sizeof(struct Student), 1, fp);
